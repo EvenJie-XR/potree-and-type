@@ -1,0 +1,11 @@
+build/
+dist/types/build/
+dist/types/libs/
+docs/
+examples/
+libs/
+node_modules/
+pointclouds/
+resources/
+src/
+.eslintrc

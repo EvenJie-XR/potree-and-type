@@ -1,7 +1,6 @@
 {
-  "name": "potree",
-  "private": true,
-  "version": "1.8.0",
+  "name": "potree-and-type",
+  "version": "1.8.3",
   "description": "WebGL point cloud viewer",
   "keywords": [
     "point",
@@ -15,20 +14,26 @@
     "browser",
     "tool"
   ],
-  "main": "./build/potree/potree.js",
+  "main": "dist/potree.js",
+  "module": "dist/potree.js",
+  "typings": "dist/types/src/Potree.d.ts",
+  "type": "module",
   "scripts": {
-    "start": "gulp watch",
-    "build": "gulp build pack",
-    "postinstall": "npm run build"
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs && npx -p typescript tsc ./src/Potree.js --declaration --allowJs --emitDeclarationOnly --outDir dist/types"
   },
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.7.0",
     "json5": "^2.1.3",
-    "rollup": "^1.31.1",
+    "rollup": "^4.5.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.36.0",
     "through": "~2.3.4"
   },
   "author": "Markus Schütz",
-  "license": "BSD-2-CLAUSE"
+  "license": "BSD-2-CLAUSE",
+  "devDependencies": {
+    "rollup-plugin-copy": "^3.5.0"
+  }
 }

@@ -1075,7 +1075,7 @@ export class Utils {
 		});
 
 	}
-
+	static screenPass(){}
 }
 
 Utils.screenPass = new function () {
