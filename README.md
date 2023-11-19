@@ -559,6 +559,8 @@ We would like to thank our sponsors for their financial contributions that keep 
 	import * as Potree from "potree-and-type"
 
 	window.Potree = Potree;
+	window.Potree.scriptPath = `${window.Potree.scriptPath}${import.meta.env.BASE_URL}`;
+	window.Potree.resourcePath = `${window.Potree.scriptPath}/resources`;
 	```
 4. 在index.html中加入如下代码：
 	```html
