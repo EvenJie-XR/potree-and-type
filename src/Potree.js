@@ -129,7 +129,7 @@ export {scriptPath, resourcePath};
 
 
 export function loadPointCloud(path, name, callback){
-	let loaded = function(e){
+	let loaded = function(e){	
 		e.pointcloud.name = name;
 		callback(e);
 	};
